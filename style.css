@@ -30,3 +30,30 @@ body {
   margin-top: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
+
+#surpriseBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff4d6d;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+#surpriseBtn:hover {
+  transform: scale(1.05);
+}
+
+#surpriseMsg {
+  margin-top: 15px;
+  font-size: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
