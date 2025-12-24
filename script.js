@@ -37,27 +37,28 @@ setInterval(() => {
 
   timer.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
+
 function startConfetti() {
-  const duration = 5 * 1000;
+  const duration = 6 * 1000;
   const end = Date.now() + duration;
 
-  (function frame() {
+  const interval = setInterval(() => {
     confetti({
-      particleCount: 5,
-      angle: 60,
-      spread: 55,
-      origin: { x: 0 }
-    });
-    confetti({
-      particleCount: 5,
-      angle: 120,
-      spread: 55,
-      origin: { x: 1 }
+      particleCount: 100,
+      spread: 120,
+      startVelocity: 40,
+      gravity: 0.8,
+      ticks: 300,
+      origin: {
+        x: Math.random(),
+        y: Math.random() * 0.5
+      }
     });
 
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
+    if (Date.now() > end) {
+      clearInterval(interval);
     }
-  })();
+  }, 500);
 }
+
 
